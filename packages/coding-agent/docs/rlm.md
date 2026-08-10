@@ -103,6 +103,8 @@ Successfully completed daemon-backed children remain addressable while their par
 await rlm.delete_subagent(children[0])
 ```
 
+`rlm()` returns an `RLMSpawnHandle` and `rlm.list_subagents()` returns `RLMSubagent` entries. On both types `name` and `session_name` are interchangeable aliases, and `rlm.delete_subagent()` accepts a spawn handle, a registry entry, or a string selector (an exact child ID, active-session ID, session ID, or unique session name).
+
 The default recursion depth allows a root agent to create children. Raising the configured depth allows descendants to recurse further.
 
 ### 3. Skills add programmatic capability
